@@ -48,7 +48,7 @@ function(config_library target)
   target_sources(${target} PRIVATE ${LLHTTP_SOURCES} ${LLHTTP_HEADERS})
 
   target_include_directories(${target} SYSTEM PUBLIC
-      ${CMAKE_CURRENT_SOURCE_DIR}/include
+      $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
   )
 
   set_target_properties(${target} PROPERTIES
